@@ -1,5 +1,5 @@
-const { Router } = require('express');
-const { listaPokemons, pokemonPorNombre, pokemonAleatorio } = require('../controllers/pokemons.controller');
+import { Router } from 'express';
+import { listaPokemons, pokemonPorNombre, pokemonAleatorio } from '../controllers/pokemons.controller.js';
 
 const router = Router();
 
@@ -9,4 +9,4 @@ router.get('/lista/:id/:limite', listaPokemons);
 
 router.get('/aleatorio', pokemonAleatorio);
 
-module.exports = router;
+export default router;

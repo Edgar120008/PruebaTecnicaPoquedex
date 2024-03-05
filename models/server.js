@@ -1,6 +1,6 @@
-const express = require('express');
-const path = require('path');
-
+import express from 'express';
+import path from 'path';
+import pokemonRouter from '../routers/pokemon.routers.js';
 
 class Server {
     constructor() {
@@ -26,15 +26,16 @@ class Server {
     //Rutas...
     routes() {
 
-        this.app.use(this.rutaPokemon, require('../routers/pokemon.routers')); //1
+        this.app.use(this.rutaPokemon, pokemonRouter);
 
 
     }
 
     listen() {
-        this.app.listen(this.port, console.log('Servidor de pruebas a la espera de instrucciones (DEV)...'));
-
+        this.app.listen(this.port, () => {
+            console.log('Servidor de pruebas a la espera de instrucciones (DEV)...');
+        });
     }
 }
 
-module.exports = Server;
+export default Server;

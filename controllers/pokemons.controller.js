@@ -1,8 +1,8 @@
-const { request, response } = require('express');
-const axios = require('axios');
-const  { generarNumeroRandom }  = require('../helpers/numeroRandom.helper');
+import { request, response } from'express';
+import  axios  from'axios';
+import  {generarNumeroRandom} from'../helpers/numeroRandom.helper.js';
 
-const pokemonPorNombre = async(req = request, res = respons) => {
+export const pokemonPorNombre = async(req = request, res = response) => {
     
     const nombre = req.params.nombre;
     
@@ -38,7 +38,7 @@ const pokemonPorNombre = async(req = request, res = respons) => {
     })
 }
 
-const listaPokemons = async(req = request, res = response) => {
+export const listaPokemons = async(req = request, res = response) => {
     
     const id = req.params.id;
     const limite = parseInt(req.params.limite);
@@ -103,7 +103,7 @@ const listaPokemons = async(req = request, res = response) => {
     });
 }
 
-const pokemonAleatorio = async(req = request, res = respons) => {
+export const pokemonAleatorio = async(req = request, res = respons) => {
     
     const idAleatorio = await generarNumeroRandom(1, 1015)
 
@@ -135,8 +135,7 @@ const pokemonAleatorio = async(req = request, res = respons) => {
     })
 }
 
-module.exports = {
-    listaPokemons,
-    pokemonPorNombre,
-    pokemonAleatorio
-}
+//  default 
+//     listaPokemons,
+//     pokemonPorNombre,
+//     pokemonAleatorio
