@@ -5,4 +5,6 @@ const generarNumeroRandom = (min, max) => {
     })
 }
 
-module.exports = generarNumeroRandom
+module.exports = {
+    generarNumeroRandom
+};
