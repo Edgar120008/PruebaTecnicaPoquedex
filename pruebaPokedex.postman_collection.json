@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "6d195121-b7b8-4774-ba66-4029cf40906b",
+		"name": "pruebaPokedex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21558491"
+	},
+	"item": [
+		{
+			"name": "listaPokemones",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/pokemon/lista/3/10"
+			},
+			"response": []
+		},
+		{
+			"name": "pokemonAleatorio",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/pokemon/aleatorio"
+			},
+			"response": []
+		},
+		{
+			"name": "pokemonPorNombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/pokemon/pokemonPorNombre/345"
+			},
+			"response": []
+		}
+	]
+}
