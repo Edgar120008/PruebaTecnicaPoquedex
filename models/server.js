@@ -2,11 +2,10 @@ const express = require('express');
 const path = require('path');
 
 
-
 class Server {
     constructor() {
         this.app = express();
-        this.port = process.env.PORT;
+        this.port = 3000;
 
         this.rutaPokemon = '/pokemon';
 
@@ -27,7 +26,7 @@ class Server {
     //Rutas...
     routes() {
 
-        // this.app.use(this.rutaPokemon, require('../routers/pokemon.routers')); //1
+        this.app.use(this.rutaPokemon, require('../routers/pokemon.routers')); //1
 
 
     }
