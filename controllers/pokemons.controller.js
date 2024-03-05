@@ -1,10 +1,10 @@
 const { request, respons } = require('express');
 const axios = require('axios');
 
-const getPokemons = async(req = request, res = respons) => {
+const listaPokemons = async(req = request, res = respons) => {
     
-    const limite = parseInt(req.body.limite);
-    const busqueda = req.body.busqueda;
+    const id = req.params.id;
+    const limite = parseInt(req.params.limite);
 
     let url = 'https://pokeapi.co/api/v2/pokemon?';
 
@@ -19,5 +19,4 @@ const getPokemons = async(req = request, res = respons) => {
             url += `limit=${limite}&`;
         }
     }
-
 }
