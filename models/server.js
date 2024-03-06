@@ -1,6 +1,6 @@
 import express from 'express';
 import path from 'path';
-import pokemonRouter from '../routers/pokemon.routers.js';
+import pokemonRouter from '../routers/pokemon.routes.js';
 
 class Server {
     constructor() {

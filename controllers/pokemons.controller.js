@@ -18,8 +18,8 @@ export const pokemonPorNombre = async(req = request, res = response) => {
         
         let name = pokemon.name;
         let id = pokemon.id;
-        let front_sprite = pokemon.sprites.front_default;
-        let back_sprite = pokemon.sprites.back_default;
+        let front_sprite = pokemon.sprites ? pokemon.sprites.front_default : null;
+        let back_sprite = pokemon.sprites ? pokemon.sprites.back_default : null;
         let move = pokemon.moves[0].move.name;
         
         let infoPokemon = {
@@ -34,6 +34,9 @@ export const pokemonPorNombre = async(req = request, res = response) => {
     })
     .catch(error => {
         console.log(error)
+        if(error.response && error.response.status === 404){
+            return res.status(404).json({message: 'Este pokemon no existe, intente con otro nombre o id valido'})
+        }
         return res.status(500).json(error)
     })
 }
@@ -134,8 +137,3 @@ export const pokemonAleatorio = async(req = request, res = respons) => {
         return res.status(500).json(error)
     })
 }
-
-//  default 
-//     listaPokemons,
-//     pokemonPorNombre,
-//     pokemonAleatorio
